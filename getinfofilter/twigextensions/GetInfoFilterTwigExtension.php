@@ -21,7 +21,7 @@ class GetInfoFilterTwigExtension extends \Twig_Extension
 
     public function getInfo($string)
     {
-        return preg_replace('#{get(i|I)nfo:siteurl}#', craft()->getSiteUrl(), $string);
+        return preg_replace('#({|%7B)get(i|I)nfo:siteurl(}|%7D)#', craft()->getSiteUrl(), $string);
     }
 
 }
